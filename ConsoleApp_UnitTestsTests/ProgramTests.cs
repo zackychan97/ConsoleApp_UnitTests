@@ -16,5 +16,19 @@ namespace A1_ConsoleApp.Tests
         {
             Assert.Fail();
         }
+
+        [TestMethod()]
+        public void PrintRandomNumberTest() { }
+
+        [TestMethod()]
+        public void PrintTodaysDateTest() { }
+
+        [TestMethod()]
+        public void PrintRandomDinoTest() { }
+
+        [TestMethod()]
+        public void PrintRandomStringActionTest() { }
+
+
     }
 }
