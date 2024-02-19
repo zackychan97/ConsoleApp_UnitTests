@@ -92,10 +92,13 @@ namespace A1_ConsoleApp
             Console.WriteLine(SortedDinosaursList[randNum]);
         }
 
-        public static void PrintRandomStringAction()
+        public static void PrintRandomStringAction(string? str = null)
         {
-            Console.Write("Enter in text string you would like: ");
-            string? str = Console.ReadLine();
+            if (str == null)
+            {
+                Console.Write("Enter in text string you would like: ");
+                str = Console.ReadLine();
+            }
 
             if (str != null)
             {

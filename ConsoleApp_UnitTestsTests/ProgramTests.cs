@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace A1_ConsoleApp.Tests
 {
@@ -104,7 +105,68 @@ namespace A1_ConsoleApp.Tests
         }
 
         [TestMethod()]
-        public void PrintRandomStringActionTest() { }
+        public void PrintRandomStringActionTest() 
+        {
+            // Arrange
+            var originalConsoleOut = Console.Out; // Save the original Console.Out
+            var outputBuilder = new StringWriter();
+            Console.SetOut(outputBuilder); // Redirect Console.Out
+
+            // Act
+            Program.PrintRandomStringAction("Hello World");
+
+            // Assert
+            string expectedOutputStart = "Taking random action with your string: ";
+            string expectedOperation = "";
+            string actualOutput = outputBuilder.ToString();
+
+            if (actualOutput.Contains("toLower()"))
+            {
+                expectedOperation = "toLower()";
+            }
+            else if (actualOutput.Contains("toUpper()"))
+            {
+                expectedOperation = "toUpper()";
+            }
+            else if (actualOutput.Contains("Length"))
+            {
+                expectedOperation = "Length";
+            }
+            else if (actualOutput.Contains("Substring()"))
+            {
+                expectedOperation = "Substring()";
+            }
+            else if (actualOutput.Contains("LastIndexOf()"))
+            {
+                expectedOperation = "LastIndexOf()";
+            }
+            else if (actualOutput.Contains("Contains()"))
+            {
+                expectedOperation = "Contains()";
+            }
+            else if (actualOutput.Contains("GetType()"))
+            {
+                expectedOperation = "GetType()";
+            }
+            else if (actualOutput.Contains("IndexOf"))
+            {
+                expectedOperation = "IndexOf";
+            }
+            else if (actualOutput.Contains("Replace()"))
+            {
+                expectedOperation = "Replace()";
+            }
+            else if (actualOutput.Contains("Reverse()"))
+            {
+                expectedOperation = "Reverse()";
+            }
+
+            Assert.IsTrue(actualOutput.StartsWith(expectedOutputStart));
+            Assert.IsTrue(actualOutput.Contains(expectedOperation));
+
+            // Restore the original Console.Out
+            Console.SetOut(originalConsoleOut);
+        }
 
 
     }
