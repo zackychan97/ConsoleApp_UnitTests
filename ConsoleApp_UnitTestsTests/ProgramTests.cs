@@ -13,13 +13,6 @@ namespace A1_ConsoleApp.Tests
     public class ProgramTests
     {
         [TestMethod()]
-        public void ConsoleMenuTest()
-        {
-            // Arrange
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void PrintRandomNumberTest() 
         {
             // Arrange
