@@ -124,7 +124,7 @@ namespace A1_ConsoleApp
                         Console.WriteLine($"{actionTaken} property derived: {alteredStr}");
                         break;
                     case 3:
-                        int lastCharIndex = str.Length - 1;
+                        int lastCharIndex = str.Length-1;
                         alteredStr = str.Substring(lastCharIndex);
                         actionTaken = "Substring()";
                         Console.WriteLine($"{actionTaken} method applied, getting last character: {alteredStr}");
@@ -157,8 +157,8 @@ namespace A1_ConsoleApp
                         break;
                     case 9:
                         char[] charArray = str.ToCharArray();
-                        Array.Reverse(charArray);
-                        string reversedString = new string(charArray);
+                        Array.Reverse( charArray );
+                        string reversedString = new string( charArray );
                         alteredStr = reversedString;
                         actionTaken = "Reverse()";
                         Console.WriteLine($"{actionTaken} method applied: {alteredStr}");
