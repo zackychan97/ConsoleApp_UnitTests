@@ -13,6 +13,23 @@ namespace A1_ConsoleApp.Tests
     public class ProgramTests
     {
         [TestMethod()]
+        public void AlwaysFails()
+        {
+            // Arrange
+
+
+            // Act
+
+
+            // Assert
+            Assert.IsTrue(false);
+
+
+            // Restore the original Console.Out
+            
+        }
+
+        [TestMethod()]
         public void PrintRandomNumberTest() 
         {
             // Arrange
